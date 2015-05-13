@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">pont commons</string>
+
+    <string name="data_yes">Igen</string>
+    <string name="data_no">Nem</string>
+    <string name="data_has"></string>
+    <string name="data_none">pont commons</string>
+
+
+</resources>

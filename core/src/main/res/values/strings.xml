@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">core</string>
+    <string name="error_device_info">Device Info</string>
+    <string name="error_exception_type">Exception Type</string>
+    <string name="error_cause">Cause</string>
+    <string name="error_stacktrace">Stacktrace</string>
+    <string name="close">Close</string>
+</resources>

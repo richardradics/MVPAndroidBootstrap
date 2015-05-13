@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+repositories{
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.aar'])
+    compile 'com.android.support:appcompat-v7:19.1.0'
+
+    compile 'com.marvinlabs:android-floatinglabel-widgets:1.5.0@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile "org.apache.commons:commons-lang3:3.1"
+    compile 'commons-io:commons-io:2.4'
+
+    compile 'com.balysv:material-ripple:1.0.1'
+    compile 'com.joanzapata.pdfview:android-pdfview:1.0.+@aar'
+
+}

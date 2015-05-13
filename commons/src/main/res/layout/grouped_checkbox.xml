@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="500dp"
+        android:layout_height="1px"
+        android:background="@android:color/transparent" />
+
+    <com.richardradics.commons.widget.echeckbox.EnhancedCheckbox
+        android:id="@+id/parentCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="Összes típus"
+        android:visibility="visible" />
+
+    <com.richardradics.commons.widget.ExpandableHeightGridView
+        android:id="@+id/childPickGridView"
+        android:layout_width="match_parent"
+        android:layout_height="10000dip"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:isScrollContainer="false"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

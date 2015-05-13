@@ -1,0 +1,30 @@
+# built application files
+*.apk
+*.ap_
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+lint
+*.dex
+*.class
+# generated files
+bin/
+gen/
+classes/
+gen-external-apklibs/
+target
+local.properties
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+.DS_Store
+*.swp
+*.bak
+.gradle
+build/
+.idea/libraries
+*.iml
+*.idea
+
+#Android Gears
+Gears/

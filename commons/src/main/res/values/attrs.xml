@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="floatingHintEditTextStyle" format="reference" />
+
+    <declare-styleable name="LabeledEditText">
+        <attr name="hint" format="string" />
+        <attr name="valueText" format="string" />
+        <attr name="valueTextSize" format="dimension" />
+        <attr name="valueTextColor" format="color" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="hintTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="GroupedCheckboxLayout">
+        <attr name="parentname" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="selectTextColor" format="color" />
+        <attr name="unselectTextColor" format="color" />
+        <attr name="checkboxButtonStyle" format="reference"/>
+        <attr name="numColumns" format="integer"/>
+        <attr name="horizontalSpacing" format="dimension"/>
+        <attr name="verticalSpacing" format="dimension"/>
+        <attr name="drawableGap" format="dimension"/>
+        <attr name="itemHeight" format="dimension"/>
+    </declare-styleable>
+
+</resources>
