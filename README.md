@@ -9,6 +9,7 @@ A project which showcases usage of AndroidAnnotions among other open source libr
 * Uncaught errorhandling
 * Navigator to get current activity onscreen
 * SnappyDB base implementation for storing everything 
+* Loading toast progress
 * Commons library with a lot of util classes and great 3rd party widgets  
 
 # Libraries
@@ -57,5 +58,3 @@ Imageloader and cacher
 
 Logger
 
-
-## UI
