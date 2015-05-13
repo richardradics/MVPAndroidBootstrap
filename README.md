@@ -1,6 +1,8 @@
 
 A project which showcases usage of AndroidAnnotions among other open source libraries.
 
+![Showcase](image.gif)
+
 # Features
 * Model-View-Presenter architectural pattern
 * AndroidAnnotations
