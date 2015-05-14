@@ -11,7 +11,6 @@ import com.richardradics.cleanaa.mvp.view.MainView;
 import com.richardradics.cleanaa.mvp.view.model.MainListViewModel;
 import com.richardradics.cleanaa.mvp.view.model.MainModelAdapter;
 import com.richardradics.cleanaa.util.RecyclerItemClickListener;
-import com.richardradics.core.mvp.Presenter;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
@@ -26,8 +25,8 @@ import java.util.List;
 @OptionsMenu(R.menu.menu_main)
 public class MainActivity extends CleanActivity implements MainView {
 
-    @Bean(MainPresenter.class)
-    Presenter presenter;
+    @Bean
+    MainPresenter presenter;
 
     @ViewById(R.id.mainModelListView)
     RecyclerView mainRecyclerView;
@@ -36,8 +35,7 @@ public class MainActivity extends CleanActivity implements MainView {
 
     @AfterViews
     void onAfterViews() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mainRecyclerView.setLayoutManager(layoutManager);
+        mainRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         presenter.setView(this);
 
         mainRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
@@ -50,14 +48,15 @@ public class MainActivity extends CleanActivity implements MainView {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         presenter.start();
     }
 
+
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         presenter.stop();
     }
 
@@ -65,15 +64,15 @@ public class MainActivity extends CleanActivity implements MainView {
     @UiThread
     public void setListViewModels(List<MainListViewModel> mainListViewModelList) {
         if (mainModelAdapter == null) {
-            mainModelAdapter = new MainModelAdapter(mainListViewModelList);
-            mainModelAdapter.notifyDataSetChanged();
+            mainModelAdapter = new MainModelAdapter();
             mainRecyclerView.setAdapter(mainModelAdapter);
         }
+        mainModelAdapter.addAll(mainListViewModelList);
     }
 
     @Override
     public void showLoading(String message) {
-        progress.showLoading(this, "Loading...");
+        progress.showLoading(this, message);
     }
 
     @Override

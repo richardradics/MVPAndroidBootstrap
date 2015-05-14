@@ -49,6 +49,17 @@ public class MainModelAdapter extends RecyclerView.Adapter<MainModelAdapter.Main
         return models.size();
     }
 
+    public void clear() {
+        models.clear();
+    }
+
+    public void addAll(List<MainListViewModel> modelList) {
+        for (MainListViewModel m : modelList) {
+            if (!models.contains(m)) {
+                models.add(m);
+            }
+        }
+    }
 
     public MainListViewModel getItemByPosition(int position) {
         return models.get(position);

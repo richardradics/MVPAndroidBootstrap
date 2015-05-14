@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class WeatherItem {
 
     @Expose
-    private Integer id;
+    private Long id;
     @Expose
     private String name;
     @Expose
@@ -32,7 +32,7 @@ public class WeatherItem {
      * @return
      *     The id
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class WeatherItem {
      * @param id
      *     The id
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

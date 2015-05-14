@@ -1,9 +1,10 @@
 package com.richardradics.cleanaa.mvp.presenter;
 
+import com.richardradics.cleanaa.domain.City;
+import com.richardradics.cleanaa.interactor.GetCitiesImp;
 import com.richardradics.cleanaa.repository.api.model.openweatherwrapper.WeatherItem;
 import com.richardradics.cleanaa.app.AppConfig;
-import com.richardradics.cleanaa.interactor.GetWeathers;
-import com.richardradics.cleanaa.interactor.GetWeathersImp;
+import com.richardradics.cleanaa.interactor.GetCities;
 import com.richardradics.cleanaa.mvp.view.MainView;
 import com.richardradics.cleanaa.mvp.view.model.MainListViewModel;
 import com.richardradics.core.mvp.Presenter;
@@ -24,8 +25,8 @@ public class MainPresenter extends BasePresenter implements Presenter {
 
     private MainView mainView;
 
-    @Bean(GetWeathersImp.class)
-    GetWeathers getWeathers;
+    @Bean(GetCitiesImp.class)
+    GetCities getCities;
 
     @Override
     public void setView(View view) {
@@ -36,10 +37,10 @@ public class MainPresenter extends BasePresenter implements Presenter {
     @Override
     public void start() {
         mainView.showLoading("Loading");
-        getWeathers.getWeathers(AppConfig.TEST_DATA.BP_LATITUDE, AppConfig.TEST_DATA.BP_LONGITUDE, AppConfig.TEST_DATA.DEFAULT_COUNT, new GetWeathers.Callback() {
+        getCities.getCities(AppConfig.TEST_DATA.BP_LATITUDE, AppConfig.TEST_DATA.BP_LONGITUDE, AppConfig.TEST_DATA.DEFAULT_COUNT, new GetCities.Callback() {
             @Override
-            public void onWeatherListItemLoaded(List<WeatherItem> weatherItemList) {
-                mainView.setListViewModels(convertToMainModel(weatherItemList));
+            public void onCitiesoaded(List<City> citiesList) {
+                mainView.setListViewModels(convertToMainModel(citiesList));
                 mainView.hideLoading(true);
             }
 
@@ -50,6 +51,7 @@ public class MainPresenter extends BasePresenter implements Presenter {
             }
         });
     }
+
 
     @Override
     public void stop() {
@@ -62,21 +64,22 @@ public class MainPresenter extends BasePresenter implements Presenter {
         mainView.showActionLabel(exception.getMessage());
     }
 
-    public List<MainListViewModel> convertToMainModel(List<WeatherItem> weatherItemList) {
+    public List<MainListViewModel> convertToMainModel(List<City> cityList) {
         List<MainListViewModel> modelList = new ArrayList<>();
         try {
             int pictureId = 0;
 
-            for (WeatherItem item : weatherItemList) {
+            for (City item : cityList) {
                 MainListViewModel mainListViewModel = new MainListViewModel();
 
-                mainListViewModel.setImageUrl("http://lorempixel.com/400/200/sports/" + String.valueOf(pictureId + 1));
+                mainListViewModel.setId(item.getId());
+                mainListViewModel.setImageUrl("http://lorempixel.com/400/200/city/" + String.valueOf(pictureId + 1));
                 mainListViewModel.setTitle(item.getName());
 
                 modelList.add(mainListViewModel);
 
                 pictureId++;
-                if (10 < pictureId) { //lorempixels gives only 10 image :)
+                if (9 < pictureId) { //lorempixels gives only 10 image :)
                     pictureId = 0;
                 }
             }

@@ -1,5 +1,6 @@
 package com.richardradics.cleanaa.interactor;
 
+import com.richardradics.cleanaa.repository.CleanRepository;
 import com.richardradics.cleanaa.repository.api.OpenWeatherClient;
 import com.richardradics.cleanaa.app.CleanDatabase;
 
@@ -15,7 +16,6 @@ public class BaseInteractor {
     @Bean
     protected CleanDatabase cleanDatabase;
 
-    @Bean
-    protected OpenWeatherClient openWeatherClient;
-
+    @Bean(OpenWeatherClient.class)
+    protected CleanRepository cleanRepository;
 }

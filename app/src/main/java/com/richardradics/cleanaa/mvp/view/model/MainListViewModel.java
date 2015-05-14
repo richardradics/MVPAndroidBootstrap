@@ -5,18 +5,16 @@ package com.richardradics.cleanaa.mvp.view.model;
  */
 public class MainListViewModel {
 
-    private static Long INSTANCES = 0L;
-
     private Long id;
     private String imageUrl;
     private String title;
 
     public MainListViewModel() {
-        this.id = INSTANCES++;
+
     }
 
     public MainListViewModel(Long id, String imageUrl, String title) {
-        this.id = INSTANCES++;
+        this.id = id;
         this.imageUrl = imageUrl;
         this.title = title;
     }
