@@ -1,6 +1,6 @@
 package com.richardradics.cleanaa.interactor;
 
-import com.richardradics.cleanaa.api.OpenWeatherClient;
+import com.richardradics.cleanaa.repository.api.OpenWeatherClient;
 import com.richardradics.cleanaa.app.CleanDatabase;
 
 import org.androidannotations.annotations.Bean;

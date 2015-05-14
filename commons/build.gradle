@@ -7,12 +7,12 @@ repositories{
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 17
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -41,14 +41,15 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile fileTree(dir: 'libs', include: ['*.aar'])
-    compile 'com.android.support:appcompat-v7:19.1.0'
 
-    compile 'com.marvinlabs:android-floatinglabel-widgets:1.5.0@aar'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile "org.apache.commons:commons-lang3:3.1"
-    compile 'commons-io:commons-io:2.4'
+    compile "com.android.support:appcompat-v7:${rootProject.ext.appcompatVersion}"
 
-    compile 'com.balysv:material-ripple:1.0.1'
-    compile 'com.joanzapata.pdfview:android-pdfview:1.0.+@aar'
+    compile "com.marvinlabs:android-floatinglabel-widgets:${rootProject.ext.floatingWidgets}"
+    compile "com.nineoldandroids:library:${rootProject.ext.nineOlds}"
+    compile "org.apache.commons:commons-lang3:${rootProject.ext.commonsLang}"
+    compile "commons-io:commons-io:${rootProject.ext.commonsIo}"
+
+    compile "com.balysv:material-ripple:${rootProject.ext.materialRipple}"
+    compile "com.joanzapata.pdfview:android-pdfview:${rootProject.ext.pdfView}"
 
 }

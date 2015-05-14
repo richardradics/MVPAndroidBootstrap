@@ -1,7 +1,7 @@
 package com.richardradics.cleanaa.interactor;
 
-import com.richardradics.cleanaa.api.model.openweatherwrapper.OpenWeatherWrapper;
-import com.richardradics.cleanaa.api.model.openweatherwrapper.WeatherItem;
+import com.richardradics.cleanaa.repository.api.model.openweatherwrapper.OpenWeatherWrapper;
+import com.richardradics.cleanaa.repository.api.model.openweatherwrapper.WeatherItem;
 import com.richardradics.cleanaa.exception.GetWeathersException;
 
 import org.androidannotations.annotations.Background;

@@ -1,6 +1,6 @@
 package com.richardradics.cleanaa.mvp.presenter;
 
-import com.richardradics.cleanaa.api.model.openweatherwrapper.WeatherItem;
+import com.richardradics.cleanaa.repository.api.model.openweatherwrapper.WeatherItem;
 import com.richardradics.cleanaa.app.AppConfig;
 import com.richardradics.cleanaa.interactor.GetWeathers;
 import com.richardradics.cleanaa.interactor.GetWeathersImp;

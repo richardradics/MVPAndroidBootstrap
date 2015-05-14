@@ -4,9 +4,9 @@ buildscript {
         maven { url 'http://download.crashlytics.com/maven' }
     }
     dependencies {
-        classpath "com.neenbedankt.gradle.plugins:android-apt:1.4+"
-        classpath "com.jakewharton.hugo:hugo-plugin:1.2.1"
-        classpath 'de.hannesstruss:godot:+'
+        classpath "com.neenbedankt.gradle.plugins:android-apt:${rootProject.ext.androidAptVersion}"
+        classpath "com.jakewharton.hugo:hugo-plugin:${rootProject.ext.hugoVersion}"
+        classpath "de.hannesstruss:godot:${rootProject.ext.godotVersion}"
     }
 }
 
@@ -43,13 +43,13 @@ apt {
 
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.richardradics.cleanaa"
-        minSdkVersion 15
-        targetSdkVersion 21
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -79,13 +79,13 @@ dependencies {
     compile "com.android.support:cardview-v7:${rootProject.ext.cardViewVersion}"
     compile "com.android.support:appcompat-v7:${rootProject.ext.appcompatVersion}"
     compile "com.android.support:support-v4:${rootProject.ext.supportV4}"
-    compile 'com.android.support:recyclerview-v7:21.0.0'
+    compile "com.android.support:recyclerview-v7:${rootProject.ext.recyclerViewVersion}"
 
     compile project(':core')
 
-    apt "org.androidannotations:androidannotations:3.3"
-    compile "org.androidannotations:androidannotations-api:3.3"
+    apt "org.androidannotations:androidannotations:${rootProject.ext.androidAnnotationsVersion}"
+    compile "org.androidannotations:androidannotations-api:${rootProject.ext.androidAnnotationsVersion}"
 
-    compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
+    compile "com.github.ksoichiro:android-observablescrollview:${rootProject.ext.observableScrollViewVersion}"
 
 }

@@ -1,6 +1,6 @@
 package com.richardradics.cleanaa.interactor;
 
-import com.richardradics.cleanaa.api.model.openweatherwrapper.WeatherItem;
+import com.richardradics.cleanaa.repository.api.model.openweatherwrapper.WeatherItem;
 
 import java.util.List;
 

@@ -13,10 +13,48 @@ buildscript {
 }
 
 ext{
-    supportV4 = '21.0.0'
-    appcompatVersion = '21.0.0'
-    cardViewVersion = '21.0.2'
-    recyclerViewVersion = '21.0.2'
+    compileSdkVersion = 21
+    minSdkVersion = 15
+    targetSdkVersion = 21
+
+    buildToolsVersion = '21.1.2'
+    androidGradleVersion = '1.1.0'
+
+    androidAnnotationsVersion = '3.3.1'
+
+    hugoVersion = '1.2.1'
+    androidAptVersion = '1.4+'
+    godotVersion = '+'
+    jsr250Version = '1.0'
+
+    supportV4 = '21.0.3'
+    supportV13 = '21.0.3'
+    appcompatVersion = '21.0.3'
+    cardViewVersion = '21.0.3'
+    recyclerViewVersion = '21.0.3'
+    paletteVersion = '21.0.3'
+
+    picassoVersion = '2.5.2'
+    retrofitVersion = '1.7.1'
+    okhttpUrlConnection = '2.0.0'
+    okhttpVersion = '2.0.0'
+
+    snappyDb = '0.5.0'
+    kryo = '2.24.0'
+
+    expandableLayout = '1.3'
+    snackbar = '2.9.1'
+    calligraphy = '2.0.2'
+    observableScrollViewVersion = '1.5.0'
+    floatingWidgets = '1.5.0@aar'
+    materialRipple = '1.0.1'
+    pdfView = '1.0.+@aar'
+    materialProgress = '1.4'
+
+    commonsIo = '2.4'
+    commonsLang = '3.1'
+    nineOlds = '2.4.0'
+
 }
 
 allprojects {
