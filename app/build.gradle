@@ -24,13 +24,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'hugo'
 apply plugin: 'de.hannesstruss.godot'
-apply plugin: 'idea'
 
-idea {
-    module {
-        testOutputDir = file('build/test-classes/debug')
-    }
-}
 
 
 apt {
@@ -73,6 +67,8 @@ android {
 
 }
 
+apply from: "build.workaround-missing-resource.gradle"
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -87,5 +83,19 @@ dependencies {
     compile "org.androidannotations:androidannotations-api:${rootProject.ext.androidAnnotationsVersion}"
 
     compile "com.github.ksoichiro:android-observablescrollview:${rootProject.ext.observableScrollViewVersion}"
+
+    testCompile "junit:junit:${rootProject.ext.junitVer}"
+    testCompile ("org.mockito:mockito-core:${rootProject.ext.mockitoVer}"){
+        exclude group: 'org.objenesis'
+    }
+    testCompile ("com.squareup:fest-android:${rootProject.ext.festVer}"){
+        exclude group: 'com.android.support'
+    }
+    testCompile("org.robolectric:robolectric:${rootProject.ext.robolectricVer}") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+
+    testCompile 'org.powermock:powermock-module-junit4-rule-agent:1.6.2'
 
 }

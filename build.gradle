@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.0'
+        classpath 'com.android.tools.build:gradle:1.2.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -17,8 +17,8 @@ ext{
     minSdkVersion = 15
     targetSdkVersion = 21
 
-    buildToolsVersion = '21.1.2'
-    androidGradleVersion = '1.1.0'
+    buildToolsVersion = '22.0.1'
+    androidGradleVersion = '1.2.3'
 
     androidAnnotationsVersion = '3.3.1'
 
@@ -35,9 +35,9 @@ ext{
     paletteVersion = '21.0.3'
 
     picassoVersion = '2.5.2'
-    retrofitVersion = '1.7.1'
-    okhttpUrlConnection = '2.0.0'
-    okhttpVersion = '2.0.0'
+    retrofitVersion = '1.9.0'
+    okhttpUrlConnection = '2.3.0'
+    okhttpVersion = '2.3.0'
 
     snappyDb = '0.5.0'
     kryo = '2.24.0'
@@ -54,6 +54,12 @@ ext{
     commonsIo = '2.4'
     commonsLang = '3.1'
     nineOlds = '2.4.0'
+
+    //test
+    junitVer = '4.12'
+    mockitoVer = '1.9.5'
+    festVer = '1.0.8'
+    robolectricVer = '3.0-rc2'
 
 }
 

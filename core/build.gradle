@@ -13,6 +13,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.hugo'
 apply plugin: 'android-apt'
 
+
 apt {
     arguments {
         androidManifestFile variant.outputs[0].processResources.manifestFile
@@ -48,9 +49,15 @@ android {
         exclude 'LICENSE.txt'
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
+
+
+    sourceSets {
+        main { assets.srcDirs = ['src/main/assets'] }
+    }
 
 }
+
+apply from: "build.workaround-missing-resource.gradle"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -86,7 +93,23 @@ dependencies {
 
     compile "com.pnikosis:materialish-progress:${rootProject.ext.materialProgress}"
 
+    testCompile "junit:junit:${rootProject.ext.junitVer}"
+    testCompile ("org.mockito:mockito-core:${rootProject.ext.mockitoVer}"){
+        exclude group: 'org.objenesis'
+    }
+    testCompile ("com.squareup:fest-android:${rootProject.ext.festVer}"){
+        exclude group: 'com.android.support'
+    }
+    testCompile("org.robolectric:robolectric:${rootProject.ext.robolectricVer}") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+
+    testCompile 'com.squareup.okhttp:mockwebserver:2.3.0'
+    testCompile 'org.powermock:powermock-module-junit4-rule-agent:1.6.2'
 }
+
+
 
 repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -97,3 +120,4 @@ repositories {
     maven { url 'http://download.crashlytics.com/maven' }
 
 }
+
