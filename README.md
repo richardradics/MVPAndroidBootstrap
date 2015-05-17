@@ -1,3 +1,5 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MVPAndroidBootstrap-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/1824)
+
 
 A project which showcases usage of AndroidAnnotions among other open source libraries.
 
