@@ -26,10 +26,7 @@ import retrofit.client.Response;
 public class OpenWeatherClient extends BaseRetrofitClient implements CleanRepository {
 
     private static final String TAG = "WeatherClient";
-    private static final String ENDPOINT = "http://api.openweathermap.org";
-
-    @Bean
-    CleanDatabase cleanDatabase;
+    public static String ENDPOINT = "http://api.openweathermap.org";
 
     @Bean
     OpenWeatherResponseMapper openWeatherResponseMapper;
@@ -46,16 +43,12 @@ public class OpenWeatherClient extends BaseRetrofitClient implements CleanReposi
         openWeatherAPI.getWeatherItems(latitude, longitude, count, new Callback<OpenWeatherWrapper>() {
             @Override
             public void success(OpenWeatherWrapper openWeatherWrapper, Response response) {
-                retries.set(0);
+
             }
 
             @Override
             public void failure(RetrofitError error) {
-                if (retry(error, retries)) {
-                    getCitiesAsync(latitude, longitude, count);
-                } else {
-                    networkErrorHandler.handlerError(error);
-                }
+                networkErrorHandler.handlerError(error);
             }
         });
     }
@@ -64,12 +57,6 @@ public class OpenWeatherClient extends BaseRetrofitClient implements CleanReposi
         try {
             OpenWeatherWrapper openWeatherWrapper = openWeatherAPI.getWeatherItems(latitude, longitude, count);
             return openWeatherResponseMapper.mapResponse(openWeatherWrapper);
-        } catch (RetrofitError retrofitError) {
-            if (retry(retrofitError, retries)) {
-                return getCities(latitude, longitude, count);
-            } else {
-                return throwGetCitiesException(retrofitError);
-            }
         } catch (Exception exception) {
             return throwGetCitiesException(exception);
         }

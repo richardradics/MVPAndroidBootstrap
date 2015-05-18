@@ -1,0 +1,10 @@
+# Gradle
+- wget https://services.gradle.org/distributions/gradle-2.2.1-all.zip
+- unzip gradle-2.2.1-all.zip
+- export GRADLE_HOME=$PWD/gradle-2.2.1-all
+- export PATH=$GRADLE_HOME/bin:$PATH
+
+script: gradle clean test
+
+
+

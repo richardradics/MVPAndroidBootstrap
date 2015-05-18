@@ -10,9 +10,11 @@ import com.richardradics.cleanaa.R;
 import com.richardradics.core.app.BaseActivity;
 import com.richardradics.core.navigation.Navigator;
 
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by radicsrichard on 15. 05. 13..
@@ -20,9 +22,11 @@ import org.androidannotations.annotations.OptionsItem;
 @EActivity
 public class CleanActivity extends BaseActivity {
 
+    @ViewById(R.id.toolbar)
     protected Toolbar toolbar;
 
 
+    @ViewById(R.id.toolbar_title)
     protected TextView titleTextView;
 
     @Bean
@@ -44,20 +48,13 @@ public class CleanActivity extends BaseActivity {
         this.toolbar = toolbar;
     }
 
-    @Override
-    public void setContentView(int layoutResID) {
-        super.setContentView(layoutResID);
+    @AfterViews
+    protected void onAfterViewsFinished() {
         initToolBar();
     }
 
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(view);
-        initToolBar();
-    }
 
     protected void initToolBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
             titleTextView = (TextView) findViewById(R.id.toolbar_title);
@@ -81,6 +78,7 @@ public class CleanActivity extends BaseActivity {
         a.recycle();
         return actionBarSize;
     }
+
 
     protected int getScreenHeight() {
         return findViewById(android.R.id.content).getHeight();
