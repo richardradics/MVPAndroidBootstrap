@@ -6,6 +6,7 @@ import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,7 +47,7 @@ public class ConnectivityAwereUrlClientTest {
         ShadowLog.stream = System.out;
 
         mockWebServer = new MockWebServer();
-        mockWebServer.play();
+        mockWebServer.start(9999);
 
         baseRetryHandler = BaseRetryHandler_.getInstance_(RuntimeEnvironment.application);
         connectivityAwareUrlClient = ConnectivityAwareUrlClient_.getInstance_(RuntimeEnvironment.application);
@@ -248,6 +249,11 @@ public class ConnectivityAwereUrlClientTest {
                 .setBody("\"You got the right one, baby\""));
         assertThat(sodaService.cola("pepsi")).isEqualTo("You got the right one, baby");
 
+    }
+
+    @After
+    public void afterTest() throws Exception{
+        mockWebServer.shutdown();
     }
 
 }

@@ -49,7 +49,7 @@ public class CleanActivity extends BaseActivity {
     }
 
     @AfterViews
-    protected void onAfterViewsFinished() {
+    protected void onBaseViewFinish() {
         initToolBar();
     }
 
