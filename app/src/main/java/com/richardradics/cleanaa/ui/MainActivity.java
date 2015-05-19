@@ -42,7 +42,7 @@ public class MainActivity extends CleanActivity implements MainView {
             @Override
             public void onItemClick(View view, int position) {
                 MainListViewModel mainListViewModel = mainModelAdapter.getItemByPosition(position);
-                DetailActivity.launch(MainActivity.this, view.findViewById(R.id.image), mainListViewModel.getImageUrl());
+                DetailActivity.launch(MainActivity.this, view.findViewById(R.id.image), mainListViewModel.getImageUrl(), mainListViewModel.getTitle());
             }
         }));
     }
@@ -52,7 +52,6 @@ public class MainActivity extends CleanActivity implements MainView {
         super.onStart();
         presenter.start();
     }
-
 
     @Override
     protected void onStop() {

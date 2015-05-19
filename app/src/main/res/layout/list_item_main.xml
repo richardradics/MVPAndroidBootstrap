@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/listRipple"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foreground="?attr/selectableItemBackground">
+    app:mrl_rippleAlpha="0.5"
+    app:mrl_rippleBackground="@android:color/white"
+    app:mrl_rippleColor="@color/primary"
+    app:mrl_rippleDelayClick="true"
+    app:mrl_rippleOverlay="true">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
-        <ImageView
-            android:id="@+id/image"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:scaleType="centerCrop" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@android:color/black"
-            android:padding="@dimen/spacing_large"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@android:color/white" />
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:scaleType="centerCrop" />
 
-    </LinearLayout>
-</FrameLayout>
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@android:color/black"
+                android:padding="@dimen/spacing_large"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </FrameLayout>
+</com.balysv.materialripple.MaterialRippleLayout>

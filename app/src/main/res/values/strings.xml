@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CleanAAArchitecture</string>
+    <string name="app_name">MVP Bootstrap</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
