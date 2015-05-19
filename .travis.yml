@@ -6,8 +6,6 @@ android:
 notifications:
   email: false
 
-before_script:
- - chmod +x gradlew
 
 before_install:
 
@@ -15,6 +13,7 @@ before_install:
   - export TERM=dumb
 
   # environment info
+  - chmod +x gradlew
   - ./gradlew -v
   - uname -a
 
