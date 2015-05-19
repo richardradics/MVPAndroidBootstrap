@@ -16,6 +16,7 @@ A project which showcases usage of AndroidAnnotions among other open source libr
 * SnappyDB base implementation for storing everything 
 * Loading toast progress
 * Commons library with a lot of util classes and great 3rd party widgets  
+* Robolectric tests with MockWebServer
 
 # Libraries
 
@@ -62,4 +63,55 @@ Imageloader and cacher
 * **HomePage** [Link](https://github.com/jakeWharton/hugo)
 
 Logger
+
+## UI
+
+### ExpandableLayout
+* **HomePage** [Link](https://github.com/traex/ExpandableLayout/)
+
+### Snackbar
+* **HomePage** [Link](https://github.com/nispok/snackbar)
+
+### ObservableScrollview
+* **HomePage** [Link](https://github.com/ksoichiro/Android-ObservableScrollView)
+
+### FloatingWidgets
+* **HomePage** [Link](https://github.com/marvinlabs/android-floatinglabel-widgets/)
+
+### MaterialRippleLayout
+* **HomePage** [Link](https://github.com/balysv/material-ripple)
+
+### MaterialProgress
+* **HomePage** [Link](https://github.com/pnikosis/materialish-progress)
+
+### Calligraphy
+* **HomePage** [Link](https://github.com/chrisjenx/Calligraphy)
+
+
+## Commons
+
+### Commons-IO
+* **HomePage** [Link](http://commons.apache.org/proper/commons-io/)
+
+### Commons-Lang
+* **HomePage** [Link](http://commons.apache.org/proper/commons-lang/)
+
+### NineOldsAndroid
+* **HomePage** [Link](https://github.com/JakeWharton/NineOldAndroids)
+
+
+## Test
+
+### Robolectric
+* **HomePage** [Link](http://robolectric.org/)
+
+### MockWebServer
+* **HomePage** [Link](https://github.com/square/okhttp/tree/master/mockwebserver)
+
+### Mockito
+* **HomePage** [Link](https://github.com/mockito/mockito)
+
+### Fest-Android
+* **HomePage** [Link](https://github.com/square/assertj-android)
+
 
