@@ -6,14 +6,17 @@ android:
 notifications:
   email: false
 
+before_script:
+ - chmod +x gradlew
+
 before_install:
 
   # for gradle output style
   - export TERM=dumb
 
   # environment info
-  - ./gradle -v
+  - ./gradlew -v
   - uname -a
 
 # Let's try to build...
-script: ./gradle clean test --stacktrace
+script: ./gradlew clean test --stacktrace
