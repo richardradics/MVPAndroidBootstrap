@@ -16,4 +16,4 @@ before_install:
   - uname -a
 
 # Let's try to build...
-script: ./gradlew clean test
+script: ./gradle clean test --stacktrace
