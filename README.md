@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/richardradics/MVPAndroidBootstrap.svg?branch=master)](https://travis-ci.org/richardradics/MVPAndroidBootstrap/builds) 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MVPAndroidBootstrap-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/1824)
 
 
