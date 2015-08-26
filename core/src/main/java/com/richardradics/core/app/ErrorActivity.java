@@ -2,7 +2,7 @@ package com.richardradics.core.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +12,7 @@ import com.richardradics.core.R;
 /**
  * Created by radicsrichard on 15. 04. 28..
  */
-public class ErrorActivity extends ActionBarActivity {
+public class ErrorActivity extends AppCompatActivity {
 
     public final static String STACKTRACE_ARG = "strack-arg";
     public final static String EXCEPTION_TYPE_ARG = "extype-arg";
