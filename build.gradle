@@ -13,11 +13,11 @@ buildscript {
 }
 
 ext{
-    compileSdkVersion = 21
+    compileSdkVersion = 23
     minSdkVersion = 15
-    targetSdkVersion = 21
+    targetSdkVersion = 23
 
-    buildToolsVersion = '22.0.1'
+    buildToolsVersion = '23.0.0'
     androidGradleVersion = '1.2.3'
 
     androidAnnotationsVersion = '3.3.1'
@@ -27,17 +27,17 @@ ext{
     godotVersion = '+'
     jsr250Version = '1.0'
 
-    supportV4 = '21.0.3'
-    supportV13 = '21.0.3'
-    appcompatVersion = '21.0.3'
-    cardViewVersion = '21.0.3'
-    recyclerViewVersion = '21.0.3'
+    supportV4 = '23.0.0'
+    supportV13 = '23.0.0'
+    appcompatVersion = '23.0.0'
+    cardViewVersion = '23.0.0'
+    recyclerViewVersion = '23.0.0'
     paletteVersion = '21.0.3'
 
     picassoVersion = '2.5.2'
     retrofitVersion = '1.9.0'
-    okhttpUrlConnection = '2.3.0'
-    okhttpVersion = '2.3.0'
+    okhttpUrlConnection = '2.5.0'
+    okhttpVersion = '2.5.0'
 
     snappyDb = '0.5.0'
     kryo = '2.24.0'
@@ -57,9 +57,9 @@ ext{
 
     //test
     junitVer = '4.12'
-    mockitoVer = '1.9.5'
+    mockitoVer = '1.10.19'
     festVer = '1.0.8'
-    robolectricVer = '3.0-rc2'
+    robolectricVer = '3.0'
 
 }
 

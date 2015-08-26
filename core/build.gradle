@@ -105,7 +105,7 @@ dependencies {
         exclude group: 'org.apache.httpcomponents', module: 'httpclient'
     }
 
-    testCompile 'com.squareup.okhttp:mockwebserver:2.3.0'
+    testCompile 'com.squareup.okhttp:mockwebserver:2.5.0'
     testCompile 'org.powermock:powermock-module-junit4-rule-agent:1.6.2'
 }
 
